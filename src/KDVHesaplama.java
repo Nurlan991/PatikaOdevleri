@@ -23,12 +23,11 @@ public class KDVHesaplama {
 		float kdvTutari = (kdvsizFiyat >= 0 && kdvsizFiyat <= 1000) ? (kdvsizFiyat*kdvOrani1) : (kdvsizFiyat*kdvOrani2); 
 		
 		//KDV'li fiyat hesaplama
-		float kdvliFiyat = (kdvsizFiyat >= 0 && kdvsizFiyat <= 1000) ? (kdvsizFiyat*kdvOrani1) + kdvsizFiyat 
-				: (kdvsizFiyat*kdvOrani2) + kdvsizFiyat;
+		float kdvliFiyat = kdvTutari + kdvsizFiyat;
 		
 		//Ürünün KDV'siz fiyatini, KDV oranini, KDV tutarini, KDV'li fiyatini ekrana yazdirma
 		System.out.println("Urunun KDV'siz fiyati :" + kdvsizFiyat);
-		String kdvOrani3  = (kdvsizFiyat >= 0 && kdvsizFiyat<=1000) ? "KDV Orani - 18%" : "KDV Orani - 8%";
+		String kdvOrani3  = (kdvsizFiyat >= 0 && kdvsizFiyat <= 1000) ? "KDV Orani - 18%" : "KDV Orani - 8%";
 		System.out.println(kdvOrani3);
 		System.out.println("KDV Tutari :" + kdvTutari );
 		System.out.println("Urunun KDV'li fiyati :" + kdvliFiyat);
